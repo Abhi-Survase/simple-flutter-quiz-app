@@ -1,4 +1,4 @@
-# adv_basics
+# Flutter - Learning Adv-Basics
 
 A Quiz app to practice basics
 
