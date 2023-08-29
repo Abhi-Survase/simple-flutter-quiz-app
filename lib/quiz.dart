@@ -12,7 +12,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  //Using *Ternary Expression* with Comparison Operator
+  //Using Ternary Expression Method
   var activeState = 'startscreen';
 
   //---Using initState Method---
@@ -48,7 +48,7 @@ class _QuizState extends State<Quiz> {
           //initState Method declaration
           //child: activeState,
 
-          //Ternary Expression with *Comparison Operator*
+          //Ternary Expression with Comparison Operator
           child: activeState == 'startscreen'
               ? StartScreen(switchScreen)
               : const QuesScreen(),
