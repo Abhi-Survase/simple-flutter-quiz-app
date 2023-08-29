@@ -12,6 +12,7 @@ class QuesScreen extends StatefulWidget {
 class _QuesScreenState extends State<QuesScreen> {
   @override
   Widget build(context) {
-    return const Text("data");
+    return const Center(
+        child: Text("QuesScreen", style: TextStyle(color: Colors.amber)));
   }
 }

@@ -12,17 +12,21 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  Widget? activeState;
+  //Using *Ternary Expression* with Comparison Operator
+  var activeState = 'startscreen';
 
-  @override
-  void initState() {
-    super.initState();
-    activeState = StartScreen(switchScreen);
-  }
+  //---Using initState Method---
+  // Widget? activeState;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   activeState = StartScreen(switchScreen);
+  // }
+  //---initState Method ends---
 
   void switchScreen() {
     setState(() {
-      activeState = const QuesScreen();
+      activeState = 'quesscreen';
     });
   }
 
@@ -38,7 +42,13 @@ class _QuizState extends State<Quiz> {
               colors: [Colors.indigo, Colors.deepPurple],
             ),
           ),
-          child: activeState,
+          //initState Method declaration
+          //child: activeState,
+
+          //Ternary Expression with *Comparison Operator*
+          child: activeState == 'startscreen'
+              ? StartScreen(switchScreen)
+              : const QuesScreen(),
         ),
       ),
     );
