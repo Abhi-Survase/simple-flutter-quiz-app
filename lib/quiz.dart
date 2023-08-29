@@ -13,7 +13,7 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
   //Using Ternary Expression Method
-  var activeState = 'startscreen';
+  var activeState = 'start-scr';
 
   //---Using initState Method---
   // Widget? activeState;
@@ -29,12 +29,18 @@ class _QuizState extends State<Quiz> {
       //init state method declaration
       //activeState = QuesScreen();
 
-      activeState = 'quesscreen';
+      activeState = 'ques-scr';
     });
   }
 
   @override
   Widget build(context) {
+    Widget displayScr = StartScreen(switchScreen);
+
+    if (activeState == 'ques-scr') {
+      displayScr = const QuesScreen();
+    }
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
@@ -45,13 +51,13 @@ class _QuizState extends State<Quiz> {
               colors: [Colors.indigo, Colors.deepPurple],
             ),
           ),
+          child: displayScr,
           //initState Method declaration
           //child: activeState,
-
           //Ternary Expression with Comparison Operator
-          child: activeState == 'startscreen'
-              ? StartScreen(switchScreen)
-              : const QuesScreen(),
+          // child: activeState == 'startscreen'
+          //     ? StartScreen(switchScreen)
+          //     : const QuesScreen(),
         ),
       ),
     );
