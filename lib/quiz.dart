@@ -26,6 +26,9 @@ class _QuizState extends State<Quiz> {
 
   void switchScreen() {
     setState(() {
+      //init state method declaration
+      //activeState = QuesScreen();
+
       activeState = 'quesscreen';
     });
   }
