@@ -12,7 +12,20 @@ class QuesScreen extends StatefulWidget {
 class _QuesScreenState extends State<QuesScreen> {
   @override
   Widget build(context) {
-    return const Center(
-        child: Text("QuesScreen", style: TextStyle(color: Colors.amber)));
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text('Question',
+              style: TextStyle(color: Colors.white, fontSize: 24)),
+          const SizedBox(height: 30),
+          ElevatedButton(onPressed: () {}, child: const Text('data1')),
+          ElevatedButton(onPressed: () {}, child: const Text('data2')),
+          ElevatedButton(onPressed: () {}, child: const Text('data3')),
+          ElevatedButton(onPressed: () {}, child: const Text('data4')),
+        ],
+      ),
+    );
   }
 }
