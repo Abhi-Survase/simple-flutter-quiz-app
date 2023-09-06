@@ -1,6 +1,6 @@
 import 'package:adv_basics/models/quiz_qs.dart';
 
-const qs = [
+const qnaData = [
   QuizQs(
     'What are the main building blocks of Flutter UIs?',
     [

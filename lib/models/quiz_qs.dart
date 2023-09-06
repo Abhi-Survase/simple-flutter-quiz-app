@@ -1,6 +1,6 @@
 class QuizQs {
-  const QuizQs(this.txt, this.ans);
+  const QuizQs(this.qs, this.ans);
 
-  final String txt;
+  final String qs;
   final List<String> ans;
 }
