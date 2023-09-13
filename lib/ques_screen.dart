@@ -24,7 +24,7 @@ class _QuesScreenState extends State<QuesScreen> {
           SizedBox(
             width: 350,
             child: Text(currentQs.qs,
-                style: const TextStyle(color: Colors.white, fontSize: 24)),
+                style: const TextStyle(color: Colors.white, fontSize: 21)),
           ),
           const SizedBox(height: 30),
           AnsButton(currentQs.ans[0], () {}),
