@@ -21,7 +21,7 @@ class StartScreen extends StatelessWidget {
             padding: EdgeInsets.all(30),
             child: Text("Learn Flutter the fun way!",
                 style: TextStyle(
-                    color: Color.fromARGB(255, 227, 205, 255), fontSize: 24)),
+                    color: Color.fromARGB(255, 246, 238, 255), fontSize: 24)),
           ),
           OutlinedButton.icon(
             onPressed: startQuiz,

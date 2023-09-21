@@ -18,20 +18,25 @@ class _QuesScreenState extends State<QuesScreen> {
 
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: 350,
-            child: Text(currentQs.qs,
-                style: const TextStyle(color: Colors.white, fontSize: 21)),
-          ),
-          const SizedBox(height: 30),
-          AnsButton(currentQs.ans[0], () {}),
-          AnsButton(currentQs.ans[1], () {}),
-          AnsButton(currentQs.ans[2], () {}),
-          AnsButton(currentQs.ans[3], () {}),
-        ],
+      child: Container(
+        margin: const EdgeInsets.all(25),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              width: 350,
+              child: Text(currentQs.qs,
+                  style: const TextStyle(
+                      color: Color.fromARGB(255, 218, 230, 255), fontSize: 16),
+                  textAlign: TextAlign.center),
+            ),
+            const SizedBox(height: 30),
+            ...currentQs.ans.map((item) {
+              return AnsButton(item, () {});
+            }),
+          ],
+        ),
       ),
     );
   }

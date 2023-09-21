@@ -48,7 +48,10 @@ class _QuizState extends State<Quiz> {
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.indigo, Colors.deepPurple],
+              colors: [
+                Color.fromARGB(255, 61, 54, 204),
+                Color.fromARGB(255, 45, 40, 156)
+              ],
             ),
           ),
           child: displayScr,
