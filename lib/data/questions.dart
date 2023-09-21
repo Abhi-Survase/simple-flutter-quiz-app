@@ -1,4 +1,4 @@
-import 'package:adv_basics/models/quiz_qs.dart';
+import 'package:adv_basics/models/quiz_qs_model.dart';
 
 const qnaData = [
   QuizQs(
