@@ -13,7 +13,7 @@ class AnsButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 11),
           backgroundColor: const Color.fromARGB(255, 17, 31, 144),
-          foregroundColor: const Color.fromARGB(255, 242, 242, 253),
+          foregroundColor: const Color.fromARGB(255, 220, 220, 255),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           )),

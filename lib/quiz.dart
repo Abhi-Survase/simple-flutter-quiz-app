@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:adv_basics/ques_screen.dart';
 import 'package:adv_basics/start_screen.dart';
 
-class Quiz extends StatefulWidget {
-  const Quiz({super.key});
+class QuizApp extends StatefulWidget {
+  const QuizApp({super.key});
 
   @override
-  State<Quiz> createState() {
+  State<QuizApp> createState() {
     return _QuizState();
   }
 }
 
-class _QuizState extends State<Quiz> {
+class _QuizState extends State<QuizApp> {
   //Using Ternary Expression Method
   var activeState = 'start-scr';
 
