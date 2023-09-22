@@ -12,9 +12,17 @@ class QuesScreen extends StatefulWidget {
 }
 
 class _QuesScreenState extends State<QuesScreen> {
+  var currentQsIndex = 0;
+
+  void ansqs() {
+    setState(() {
+      currentQsIndex += 1;
+    });
+  }
+
   @override
   Widget build(context) {
-    final currentQs = qnaData[0];
+    final currentQs = qnaData[currentQsIndex];
 
     return SizedBox(
       width: double.infinity,
@@ -33,7 +41,7 @@ class _QuesScreenState extends State<QuesScreen> {
             ),
             const SizedBox(height: 30),
             ...currentQs.getShuffledAns().map((item) {
-              return AnsButton(item, () {});
+              return AnsButton(item, ansqs);
             }),
           ],
         ),
