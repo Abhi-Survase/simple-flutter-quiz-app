@@ -14,6 +14,7 @@ class AnsButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 11),
           backgroundColor: const Color.fromARGB(255, 17, 31, 144),
           foregroundColor: const Color.fromARGB(255, 220, 220, 255),
+          textStyle: const TextStyle(fontSize: 15),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15),
           )),
