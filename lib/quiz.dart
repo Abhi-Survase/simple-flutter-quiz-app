@@ -12,6 +12,8 @@ class QuizApp extends StatefulWidget {
 }
 
 class _QuizState extends State<QuizApp> {
+  final List<String> selectedAns = [];
+
   //Using Ternary Expression Method
   var activeState = 'start-scr';
 
@@ -33,12 +35,16 @@ class _QuizState extends State<QuizApp> {
     });
   }
 
+  void chooseAns(String ans) {
+    selectedAns.add(ans);
+  }
+
   @override
   Widget build(context) {
     Widget displayScr = StartScreen(switchScreen);
 
     if (activeState == 'ques-scr') {
-      displayScr = const QuesScreen();
+      displayScr = QuesScreen(onSelectAns: chooseAns);
     }
 
     return MaterialApp(
