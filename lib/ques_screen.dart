@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:adv_basics/ans_buttom.dart';
+import 'package:adv_basics/ans_button.dart';
 import 'package:adv_basics/data/questions.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -40,14 +40,18 @@ class _QuesScreenState extends State<QuesScreen> {
               width: 350,
               child: Text(currentQs.qs,
                   style: GoogleFonts.lato(
-                      color: const Color.fromARGB(255, 182, 205, 255),
+                      color: const Color.fromARGB(255, 203, 182, 255),
                       fontSize: 21,
                       fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center),
             ),
             const SizedBox(height: 30),
-            ...currentQs.getShuffledAns().map((item) {
-              return AnsButton(item, ansqs('..'));
+            ...currentQs.getShuffledAns().map((answer) {
+              return AnsButton(
+                  ansTxt: answer,
+                  onTap: () {
+                    ansqs(answer);
+                  });
             }),
           ],
         ),
