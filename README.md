@@ -4,4 +4,6 @@ A Quiz app to practice basics
 
 ## Getting Started
 
-Learning to lift-States and change to different screens.
+* Practiced so far:
+  *  Learning to lift-States and switch to different screens.
+  *  Store data and pass it across widgets to be used later (result screen).
