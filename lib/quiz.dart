@@ -1,3 +1,4 @@
+import 'package:adv_basics/data/questions.dart';
 import 'package:flutter/material.dart';
 import 'package:adv_basics/ques_screen.dart';
 import 'package:adv_basics/start_screen.dart';
@@ -11,11 +12,14 @@ class QuizApp extends StatefulWidget {
   }
 }
 
+const startscreen = 'start-scr';
+const quesscreen = 'ques-scr';
+
 class _QuizState extends State<QuizApp> {
   final List<String> selectedAns = [];
 
   //Using Ternary Expression Method
-  var activeState = 'start-scr';
+  var activeState = startscreen;
 
   //---Using initState Method---
   // Widget? activeState;
@@ -31,19 +35,25 @@ class _QuizState extends State<QuizApp> {
       //init state method declaration
       //activeState = QuesScreen();
 
-      activeState = 'ques-scr';
+      activeState = quesscreen;
     });
   }
 
   void chooseAns(String ans) {
     selectedAns.add(ans);
+
+    if (selectedAns.length == qnaData.length) {
+      setState(() {
+        activeState = startscreen;
+      });
+    }
   }
 
   @override
   Widget build(context) {
     Widget displayScr = StartScreen(switchScreen);
 
-    if (activeState == 'ques-scr') {
+    if (activeState == quesscreen) {
       displayScr = QuesScreen(onSelectAns: chooseAns);
     }
 
