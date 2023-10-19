@@ -1,7 +1,26 @@
+import 'package:adv_basics/data/questions.dart';
+import 'package:adv_basics/qs_summary.dart';
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
-  const ResultScreen({super.key});
+  const ResultScreen({super.key, required this.chosenAns});
+
+  final List<String> chosenAns;
+
+  List<Map<String, Object>> getAnsSummary() {
+    final List<Map<String, Object>> summary = [];
+
+    for (var i = 0; i < chosenAns.length; i++) {
+      summary.add({
+        'question_index': i,
+        'question': qnaData[i].qs,
+        'correct_answer': qnaData[i].ans[0],
+        'user_answer': chosenAns[i]
+      });
+    }
+
+    return summary;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +32,10 @@ class ResultScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text('Result Screen'),
-            const Text('data'),
+            Padding(
+              padding: const EdgeInsets.all(30),
+              child: QuesSummary(summaryData: getAnsSummary()),
+            ),
             OutlinedButton.icon(
               onPressed: () {},
               style: OutlinedButton.styleFrom(

@@ -46,13 +46,16 @@ class _QuesScreenState extends State<QuesScreen> {
                   textAlign: TextAlign.center),
             ),
             const SizedBox(height: 30),
-            ...currentQs.getShuffledAns().map((answer) {
-              return AnsButton(
+            ...currentQs.getShuffledAns().map(
+              (answer) {
+                return AnsButton(
                   ansTxt: answer,
                   onTap: () {
                     ansqs(answer);
-                  });
-            }),
+                  },
+                );
+              },
+            ),
           ],
         ),
       ),

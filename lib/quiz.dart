@@ -45,7 +45,6 @@ class _QuizState extends State<QuizApp> {
     selectedAns.add(ans);
 
     if (selectedAns.length == qnaData.length) {
-      selectedAns.clear();
       setState(() {
         activeState = resultscreen;
       });
@@ -59,7 +58,9 @@ class _QuizState extends State<QuizApp> {
     if (activeState == quesscreen) {
       displayScr = QuesScreen(onSelectAns: chooseAns);
     } else if (activeState == resultscreen) {
-      displayScr = const ResultScreen();
+      displayScr = ResultScreen(
+        chosenAns: selectedAns,
+      );
     }
 
     return MaterialApp(
