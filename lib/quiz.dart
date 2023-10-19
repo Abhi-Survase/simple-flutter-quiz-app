@@ -1,4 +1,5 @@
 import 'package:adv_basics/data/questions.dart';
+import 'package:adv_basics/result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:adv_basics/ques_screen.dart';
 import 'package:adv_basics/start_screen.dart';
@@ -14,9 +15,10 @@ class QuizApp extends StatefulWidget {
 
 const startscreen = 'start-scr';
 const quesscreen = 'ques-scr';
+const resultscreen = 'result-scr';
 
 class _QuizState extends State<QuizApp> {
-  final List<String> selectedAns = [];
+  List<String> selectedAns = [];
 
   //Using Ternary Expression Method
   var activeState = startscreen;
@@ -43,8 +45,9 @@ class _QuizState extends State<QuizApp> {
     selectedAns.add(ans);
 
     if (selectedAns.length == qnaData.length) {
+      selectedAns.clear();
       setState(() {
-        activeState = startscreen;
+        activeState = resultscreen;
       });
     }
   }
@@ -55,6 +58,8 @@ class _QuizState extends State<QuizApp> {
 
     if (activeState == quesscreen) {
       displayScr = QuesScreen(onSelectAns: chooseAns);
+    } else if (activeState == resultscreen) {
+      displayScr = const ResultScreen();
     }
 
     return MaterialApp(
