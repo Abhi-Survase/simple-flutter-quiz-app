@@ -59,6 +59,7 @@ class _QuizState extends State<QuizApp> {
       displayScr = QuesScreen(onSelectAns: chooseAns);
     } else if (activeState == resultscreen) {
       displayScr = ResultScreen(
+        restartQuiz: switchScreen,
         chosenAns: selectedAns,
       );
     }
